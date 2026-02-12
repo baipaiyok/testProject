@@ -1,0 +1,28 @@
+name: My First CI-CD Pipeline
+on:
+  push:
+    branches: [ main ]  # ทำงานทุกครั้งที่ push เข้า branch main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # อนุญาตให้ระบบเขียนไฟล์เพื่อ Deploy ได้
+    
+    steps:
+      # 1. ดึง Code จาก GitHub มาที่เครื่องจำลอง (Runner)
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. ขั้นตอน CI: จำลองการรัน Test (ในโปรเจกต์จริงจะรัน npm test หรืออื่นๆ)
+      - name: Run Unit Test
+        run: |
+          echo "Starting tests..."
+          echo "All tests passed!"
+
+      # 3. ขั้นตอน CD: ส่งไฟล์ไปที่ GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .  # ส่งไฟล์ทั้งหมดในโฟลเดอร์ปัจจุบันขึ้นเว็บ
+          branch: gh-pages # สร้าง branch ใหม่สำหรับเก็บหน้าเว็บโดยเฉพาะ
