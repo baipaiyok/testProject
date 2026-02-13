@@ -16,7 +16,7 @@ jobs:
 
       # 2. ขั้นตอน CI: จำลองการรัน Test (ในโปรเจกต์จริงจะรัน npm test หรืออื่นๆ)
       - name: Run Unit Test
-        run: |
+        runnnnnn: |
           echo "Starting tests..."
           echo "All tests passed!"
 
