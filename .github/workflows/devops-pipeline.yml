@@ -14,9 +14,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint    
+
       # 2. ขั้นตอน CI: จำลองการรัน Test (ในโปรเจกต์จริงจะรัน npm test หรืออื่นๆ)
       - name: Run Unit Test
-        runnnnnn: |
+        run: |
           echo "Starting tests..."
           echo "All tests passed!"
 
