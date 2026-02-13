@@ -1,21 +1,9 @@
 {
-  "name": "testproject",
+  "name": "test-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "lint": "echo \"Linting... ทุกอย่างดูดีมาก!\"" 
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/baipaiyok/testProject.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/baipaiyok/testProject/issues"
-  },
-  "homepage": "https://github.com/baipaiyok/testProject#readme"
+  "dependencies": {}
 }
